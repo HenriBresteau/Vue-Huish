@@ -62,6 +62,19 @@
               <h3> {{ product.description}} </h3>
               <span> {{product.price}}€</span>
             </div>
+            <div class="card-icons">
+              <div class="like-container">
+                <input type="checkbox" name="checkbox" v-bind:id="product.id"> 
+                <label v-bind:for="product.id">
+                  <i class="fas fa-heart"></i>
+                </label>
+              </div>
+              <div class="add-to-cart">
+                <button>
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
