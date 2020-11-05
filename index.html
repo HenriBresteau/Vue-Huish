@@ -90,7 +90,7 @@
         <div class="shopping-cart" id="shopping-cart" v-if="cart.length >0">
           <h2>Panier</h2>
           <div class="item-group">
-            <div class="item" v-for="product in cart">
+            <div class="item" v-for="product, id in cart" :key="product.id" >
               <div class="img-container">
                 <img :src="product.img" alt="">
               </div>
@@ -101,14 +101,14 @@
               <div class="item-quantity">
                 <h6> quantité: {{product.quantity}} </h6>
                 <div class="cart-icons">
-                  <button>
+                  <button @click="cartPlusOne(product)" >
                     <i class="fa fa-plus"></i>
                   </button>
-                  <button>
+                  <button @click="cartMinusOne(product, id)" >
                     <i class="fa fa-minus"></i>
                   </button>
                   <button>
-                    <i class="fa fa-trash"></i>
+                    <i class="fa fa-trash" @click="cartRemoveItem(id)" ></i>
                   </button>
                 </div>
               </div>
