@@ -52,6 +52,9 @@
       <!-- search display -->
         <input type="search" v-model="searchKey" id="search" placeholder="Rechercher ..."
         autocomplete="off" >
+        <span v-if="searchKey && filteredList.length >=1">
+            {{ filteredList.length}} résultat<span v-if="searchKey && filteredList.length >=2">s</span>
+        </span>
       <!-- card display -->
       <div class="card-cart-container">
         <div class="card-container">
@@ -76,6 +79,11 @@
                 </button>
               </div>
             </div>
+          </div>
+          <!-- no result message -->
+          <div v-if="searchKey && filteredList.length == []" class="no-result">
+            <h3>Désolé</h3>
+            <p>Aucun résultat trouvé</p>
           </div>
         </div>
       </div>
