@@ -74,7 +74,7 @@
                 </label>
               </div>
               <div class="add-to-cart">
-                <button>
+                <button @click="addToCart(product)">
                   <i class="fas fa-shopping-cart"></i>
                 </button>
               </div>
@@ -84,6 +84,36 @@
           <div v-if="searchKey && filteredList.length == []" class="no-result">
             <h3>Désolé</h3>
             <p>Aucun résultat trouvé</p>
+          </div>
+        </div>
+        <!-- cart display -->
+        <div class="shopping-cart" id="shopping-cart" v-if="cart.length >0">
+          <h2>Panier</h2>
+          <div class="item-group">
+            <div class="item" v-for="product in cart">
+              <div class="img-container">
+                <img :src="product.img" alt="">
+              </div>
+              <div class="item-description">
+                <h4> {{ product.description}} </h4>
+                <p> {{product.price}}€</p>
+              </div>
+              <div class="item-quantity">
+                <h6> quantité: {{product.quantity}} </h6>
+                <div class="cart-icons">
+                  <button>
+                    <i class="fa fa-plus"></i>
+                  </button>
+                  <button>
+                    <i class="fa fa-minus"></i>
+                  </button>
+                  <button>
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+              
+           </div>
           </div>
         </div>
       </div>
