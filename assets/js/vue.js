@@ -18,7 +18,7 @@ const ShoppingCart = {
 const router = new VueRouter({
     routes : [
         { path: '/', component: Home, name:'Home' },
-        { path: '/user-setting', component: UserSettings, name:'UserSettings' },
+        { path: '/user-settings', component: UserSettings, name:'UserSettings' },
         { path: '/wish-list', component: WishList, name:'WishList' },
         { path: '/shopping-cart', component: ShoppingCart, name:'ShoppingCart' },
     ]
